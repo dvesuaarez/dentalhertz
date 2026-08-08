@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Consultorio Dental Hertz · Odontología cálida y humana en Coyoacán</title>
+<meta name="description" content="Consultorio Dental Hertz — odontología general, preventiva y especializada con atención humana y ética en Plaza Taxqueña, Coyoacán, CDMX. Agenda tu cita en línea." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --periwinkle:#5169d3;
+    --periwinkle-deep:#3a4cb2;
+    --periwinkle-tint:#eaedfb;
+    --ink:#1a1f45;
+    --ink-soft:#4a4f75;
+    --muted:#787da3;
+    --mint:#25c3a0;
+    --mint-tint:#e3f8f2;
+    --paper:#f6f7fd;
+    --white:#ffffff;
+    --line:#e4e6f4;
+    --shadow-sm:0 2px 10px rgba(26,31,69,.06);
+    --shadow-md:0 18px 40px -18px rgba(58,76,178,.35);
+    --shadow-lg:0 40px 90px -30px rgba(58,76,178,.45);
+    --r:22px;
+    --r-lg:30px;
+    --maxw:1180px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Manrope",system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:"Bricolage Grotesque",serif;font-weight:700;line-height:1.05;letter-spacing:-.02em}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:var(--periwinkle);color:#fff}
+  :focus-visible{outline:3px solid var(--mint);outline-offset:3px;border-radius:6px}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .eyebrow{
+    font-family:"Manrope";font-weight:700;font-size:.78rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--periwinkle);display:inline-flex;align-items:center;gap:9px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--periwinkle);border-radius:2px}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-family:"Manrope";font-weight:700;font-size:1rem;
+    padding:15px 28px;border-radius:100px;border:none;cursor:pointer;
+    transition:transform .25s cubic-bezier(.2,.9,.3,1),box-shadow .25s,background .25s;
+    text-align:center;
+  }
+  .btn-primary{background:var(--periwinkle);color:#fff;box-shadow:var(--shadow-md)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);background:var(--periwinkle-deep)}
+  .btn-ghost{background:var(--white);color:var(--ink);border:1.5px solid var(--line);box-shadow:var(--shadow-sm)}
+  .btn-ghost:hover{transform:translateY(-3px);border-color:var(--periwinkle);color:var(--periwinkle)}
+  .btn-wa{background:#25D366;color:#0a3d20}
+  .btn-wa:hover{transform:translateY(-3px);box-shadow:0 18px 36px -14px rgba(37,211,102,.6)}
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:80;
+    backdrop-filter:blur(14px);
+    background:rgba(246,247,253,.78);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s,background .3s;
+  }
+  header.nav.scrolled{border-color:var(--line);background:rgba(246,247,253,.92)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:"Bricolage Grotesque";font-weight:700;font-size:1.18rem}
+  .brand .mark{
+    width:42px;height:42px;border-radius:12px;background:var(--periwinkle);
+    display:grid;place-items:center;box-shadow:var(--shadow-sm);flex:none;
+  }
+  .brand .mark svg{width:26px;height:26px}
+  .brand small{display:block;font-family:"Manrope";font-weight:600;font-size:.66rem;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin-top:1px}
+  .nav-links{display:flex;align-items:center;gap:32px}
+  .nav-links a.link{font-weight:600;font-size:.95rem;color:var(--ink-soft);transition:color .2s}
+  .nav-links a.link:hover{color:var(--periwinkle)}
+  .nav-cta .btn{padding:12px 22px;font-size:.95rem}
+  .burger{display:none;background:none;border:none;cursor:pointer;padding:8px}
+  .burger span{display:block;width:24px;height:2px;background:var(--ink);border-radius:2px;margin:5px 0;transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;padding:70px 0 90px;overflow:hidden}
+  .hero-blob{position:absolute;border-radius:50%;filter:blur(50px);opacity:.5;z-index:0;pointer-events:none}
+  .b1{width:520px;height:520px;background:radial-gradient(circle,#8ea1ee,transparent 70%);top:-160px;right:-120px}
+  .b2{width:420px;height:420px;background:radial-gradient(circle,#7fe6cf,transparent 70%);bottom:-160px;left:-140px;opacity:.4}
+  .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(2.6rem,5.4vw,4.5rem);margin:22px 0 20px}
+  .hero h1 .accent{color:var(--periwinkle);position:relative;white-space:nowrap}
+  .smile-underline{position:absolute;left:0;bottom:-14px;width:100%;height:26px;overflow:visible}
+  .smile-underline path{fill:none;stroke:var(--mint);stroke-width:6;stroke-linecap:round}
+  .hero p.lead{font-size:1.18rem;color:var(--ink-soft);max-width:520px;margin-bottom:32px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+  .trust{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+  .trust .stars-badge{display:flex;align-items:center;gap:12px;background:var(--white);padding:11px 18px;border-radius:100px;box-shadow:var(--shadow-sm);border:1px solid var(--line)}
+  .stars{color:#ffb020;letter-spacing:2px;font-size:1.05rem}
+  .trust b{font-weight:800}
+  .trust .gsub{font-size:.85rem;color:var(--muted);font-weight:600}
+
+  /* hero visual card */
+  .hero-visual{position:relative}
+  .hero-photo{
+    position:relative;aspect-ratio:4/5;border-radius:var(--r-lg);overflow:hidden;
+    box-shadow:var(--shadow-lg);background:linear-gradient(160deg,var(--periwinkle),var(--periwinkle-deep));
+  }
+  .hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .photo-caption{
+    position:absolute;left:0;right:0;bottom:0;padding:28px 26px 24px;color:#fff;z-index:2;
+    background:linear-gradient(to top,rgba(20,25,60,.78),rgba(20,25,60,.15) 70%,transparent);
+  }
+  .photo-caption .kicker{font-weight:700;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;opacity:.85}
+  .photo-caption h3{font-size:1.5rem;margin-top:6px;color:#fff;line-height:1.1}
+  .float-chip{
+    position:absolute;background:#fff;border-radius:16px;padding:12px 16px;box-shadow:var(--shadow-md);
+    display:flex;align-items:center;gap:10px;font-weight:700;font-size:.9rem;border:1px solid var(--line);z-index:3;
+  }
+  .chip-1{top:-22px;left:-18px}
+  .chip-2{bottom:-20px;right:-14px}
+  .chip-ico{width:34px;height:34px;border-radius:10px;background:var(--mint-tint);display:grid;place-items:center;flex:none;color:var(--mint)}
+
+  /* ---------- generic section ---------- */
+  section{position:relative}
+  .section-pad{padding:96px 0}
+  .sec-head{max-width:680px;margin-bottom:52px}
+  .sec-head h2{font-size:clamp(2rem,4vw,3rem);margin:16px 0 14px}
+  .sec-head p{font-size:1.1rem;color:var(--ink-soft)}
+  .center{margin-left:auto;margin-right:auto;text-align:center}
+  .center .eyebrow{justify-content:center}
+
+  /* smile divider */
+  .smile-divider{display:block;width:100%;height:60px;overflow:visible}
+  .smile-divider path{fill:none;stroke:var(--periwinkle-tint);stroke-width:5;stroke-linecap:round}
+
+  /* ---------- SERVICES ---------- */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .svc{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:34px 30px;
+    box-shadow:var(--shadow-sm);transition:transform .3s,box-shadow .3s,border-color .3s;position:relative;overflow:hidden;
+  }
+  .svc:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:transparent}
+  .svc .ico{width:56px;height:56px;border-radius:16px;background:var(--periwinkle-tint);display:grid;place-items:center;margin-bottom:20px;color:var(--periwinkle)}
+  .svc:nth-child(2) .ico{background:var(--mint-tint);color:var(--mint)}
+  .svc h3{font-size:1.35rem;margin-bottom:10px}
+  .svc p{color:var(--ink-soft);font-size:.98rem;margin-bottom:16px}
+  .svc ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .svc li{font-size:.92rem;font-weight:600;color:var(--ink-soft);display:flex;align-items:center;gap:10px}
+  .svc li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--periwinkle);flex:none}
+
+  /* ---------- DOCTOR ---------- */
+  .doctor{background:var(--white)}
+  .doc-inner{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+  .doc-photo{
+    aspect-ratio:4/5;border-radius:var(--r-lg);background:linear-gradient(160deg,#dfe4fb,#c7cef6);
+    position:relative;overflow:hidden;box-shadow:var(--shadow-md);display:grid;place-items:center;
+  }
+  .doc-photo .avatar{font-family:"Bricolage Grotesque";font-weight:800;font-size:7rem;color:var(--periwinkle);opacity:.85}
+  .doc-photo .big-smile{position:absolute;bottom:24px;width:70%}
+  .doc-photo .big-smile path{fill:none;stroke:#fff;stroke-width:12;stroke-linecap:round;opacity:.75}
+  .doc-body h2{font-size:clamp(1.9rem,3.6vw,2.7rem);margin:16px 0 6px}
+  .doc-role{color:var(--periwinkle);font-weight:700;font-size:1.05rem;margin-bottom:20px}
+  .doc-body p{color:var(--ink-soft);font-size:1.05rem;margin-bottom:18px}
+  .doc-values{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 30px}
+  .val{background:var(--paper);border:1px solid var(--line);border-radius:100px;padding:9px 16px;font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:8px}
+  .val svg{color:var(--mint)}
+
+  /* ---------- WHY ---------- */
+  .why{background:linear-gradient(180deg,var(--paper),var(--periwinkle-tint))}
+  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .feat{background:var(--white);border-radius:var(--r);padding:30px 26px;box-shadow:var(--shadow-sm);border:1px solid var(--line);transition:transform .3s,box-shadow .3s}
+  .feat:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+  .feat .ico{width:52px;height:52px;border-radius:14px;background:var(--periwinkle);color:#fff;display:grid;place-items:center;margin-bottom:18px}
+  .feat h3{font-size:1.2rem;margin-bottom:8px}
+  .feat p{font-size:.93rem;color:var(--ink-soft)}
+
+  /* ---------- REVIEWS ---------- */
+  .rev-top{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+  .google-score{display:flex;align-items:center;gap:18px;background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:22px 28px;box-shadow:var(--shadow-sm)}
+  .google-score .num{font-family:"Bricolage Grotesque";font-size:3.2rem;font-weight:800;line-height:1;color:var(--ink)}
+  .google-score .g{font-weight:700;color:var(--ink-soft);font-size:.95rem}
+  .grid-rev{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .review{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:30px;box-shadow:var(--shadow-sm);position:relative}
+  .review .quote{font-family:"Bricolage Grotesque";font-size:3rem;line-height:.6;color:var(--periwinkle-tint);height:26px}
+  .review p{font-size:1.05rem;color:var(--ink);margin:14px 0 20px;font-weight:500}
+  .review .who{display:flex;align-items:center;gap:12px}
+  .review .who .a{width:40px;height:40px;border-radius:50%;background:var(--periwinkle-tint);color:var(--periwinkle);display:grid;place-items:center;font-weight:800}
+  .review .who small{display:block;color:var(--muted);font-weight:600;font-size:.78rem}
+  .review .who b{font-size:.92rem}
+
+  /* ---------- BOOKING / AGENDA ---------- */
+  .agenda{background:linear-gradient(160deg,var(--periwinkle),var(--periwinkle-deep));color:#fff;position:relative;overflow:hidden}
+  .agenda .bg-smile{position:absolute;right:-60px;top:-40px;width:420px;opacity:.1}
+  .agenda .bg-smile path{fill:none;stroke:#fff;stroke-width:14;stroke-linecap:round}
+  .agenda-inner{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start;position:relative;z-index:2}
+  .agenda .eyebrow{color:#bcc7f5}
+  .agenda .eyebrow::before{background:#bcc7f5}
+  .agenda h2{color:#fff;font-size:clamp(2rem,4vw,3rem);margin:16px 0 16px}
+  .agenda .lead{color:#dfe4fb;font-size:1.1rem;margin-bottom:30px}
+  .agenda-side .contact-line{display:flex;align-items:center;gap:14px;margin-bottom:18px;color:#eef1fd;font-weight:600}
+  .agenda-side .contact-line .ico{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.14);display:grid;place-items:center;flex:none}
+  .agenda-side .contact-line small{display:block;font-weight:500;font-size:.8rem;color:#bcc7f5}
+
+  .booker{background:#fff;border-radius:var(--r-lg);padding:32px;color:var(--ink);box-shadow:var(--shadow-lg)}
+  .steps-bar{display:flex;gap:8px;margin-bottom:26px}
+  .steps-bar .dot{flex:1;height:6px;border-radius:6px;background:var(--line);transition:background .4s}
+  .steps-bar .dot.active{background:var(--periwinkle)}
+  .step-label{font-weight:700;color:var(--muted);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+  .step h3{font-size:1.5rem;margin-bottom:20px}
+  .step{display:none}
+  .step.on{display:block;animation:fade .4s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+  .opts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .opt{
+    border:1.5px solid var(--line);border-radius:16px;padding:16px;cursor:pointer;font-weight:600;
+    transition:.2s;display:flex;flex-direction:column;gap:4px;background:#fff;text-align:left;
+  }
+  .opt small{color:var(--muted);font-weight:500;font-size:.8rem}
+  .opt:hover{border-color:var(--periwinkle)}
+  .opt.sel{border-color:var(--periwinkle);background:var(--periwinkle-tint)}
+
+  .cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+  .cal-head b{font-weight:700;font-size:1.05rem;text-transform:capitalize}
+  .cal-nav{display:flex;gap:8px}
+  .cal-nav button{width:36px;height:36px;border-radius:10px;border:1.5px solid var(--line);background:#fff;cursor:pointer;font-size:1.1rem;display:grid;place-items:center;transition:.2s}
+  .cal-nav button:hover:not(:disabled){border-color:var(--periwinkle);color:var(--periwinkle)}
+  .cal-nav button:disabled{opacity:.35;cursor:not-allowed}
+  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+  .cal-grid .dow{text-align:center;font-size:.72rem;font-weight:700;color:var(--muted);padding:4px 0;text-transform:uppercase}
+  .day{aspect-ratio:1;border-radius:12px;border:none;background:var(--paper);cursor:pointer;font-weight:600;font-size:.95rem;color:var(--ink);transition:.15s;font-family:inherit}
+  .day:hover:not(:disabled){background:var(--periwinkle-tint);color:var(--periwinkle)}
+  .day:disabled{opacity:.28;cursor:not-allowed;background:transparent}
+  .day.sel{background:var(--periwinkle);color:#fff}
+  .day.empty{background:transparent;cursor:default}
+
+  .slots{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .slot{border:1.5px solid var(--line);border-radius:12px;padding:12px;cursor:pointer;font-weight:600;background:#fff;transition:.2s;font-family:inherit;font-size:.95rem}
+  .slot:hover{border-color:var(--periwinkle);color:var(--periwinkle)}
+  .slot.sel{background:var(--periwinkle);color:#fff;border-color:var(--periwinkle)}
+
+  .field{margin-bottom:16px}
+  .field label{display:block;font-weight:700;font-size:.85rem;margin-bottom:7px}
+  .field input,.field textarea{
+    width:100%;border:1.5px solid var(--line);border-radius:12px;padding:13px 15px;font-family:inherit;font-size:1rem;
+    transition:.2s;background:var(--paper);
+  }
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--periwinkle);background:#fff}
+
+  .summary{background:var(--paper);border-radius:16px;padding:20px;margin-bottom:20px}
+  .summary .row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:.95rem}
+  .summary .row:last-child{border:none}
+  .summary .row span{color:var(--muted);font-weight:600}
+  .summary .row b{text-align:right}
+
+  .nav-btns{display:flex;gap:12px;margin-top:24px}
+  .nav-btns .btn{flex:1}
+  .btn-back{background:transparent;color:var(--ink-soft);border:1.5px solid var(--line);box-shadow:none;flex:none;padding:15px 20px}
+  .btn-back:hover{border-color:var(--periwinkle);color:var(--periwinkle);transform:none}
+  .hint{font-size:.82rem;color:var(--muted);margin-top:12px;text-align:center}
+
+  .confirm-view{text-align:center;padding:14px 0}
+  .confirm-view .check{width:84px;height:84px;margin:0 auto 20px}
+  .confirm-view h3{font-size:1.7rem;margin-bottom:10px}
+  .confirm-view p{color:var(--ink-soft);margin-bottom:24px}
+
+  /* ---------- LOCATION ---------- */
+  .loc-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .loc-map{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-md);border:1px solid var(--line);min-height:380px}
+  .loc-map iframe{width:100%;height:100%;min-height:380px;border:0;display:block}
+  .info-list{display:flex;flex-direction:column;gap:6px;margin:24px 0}
+  .info-item{display:flex;gap:16px;padding:16px;border-radius:16px;transition:.2s;align-items:flex-start}
+  .info-item:hover{background:var(--white);box-shadow:var(--shadow-sm)}
+  .info-item .ico{width:46px;height:46px;border-radius:12px;background:var(--periwinkle-tint);color:var(--periwinkle);display:grid;place-items:center;flex:none}
+  .info-item b{display:block;font-size:1rem}
+  .info-item span{color:var(--ink-soft);font-size:.95rem}
+  .hours-tbl{display:flex;flex-direction:column;gap:2px}
+  .hours-tbl .hr{display:flex;justify-content:space-between;padding:6px 0;font-size:.95rem}
+  .hours-tbl .hr span{color:var(--ink-soft)}
+  .hours-tbl .hr.closed b{color:var(--muted)}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink);color:#c9cdec;padding:64px 0 30px}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:44px}
+  .foot-brand{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+  .foot-brand .mark{width:44px;height:44px;border-radius:12px;background:var(--periwinkle);display:grid;place-items:center;flex:none}
+  .foot-brand .mark svg{width:28px;height:28px}
+  .foot-brand b{font-family:"Bricolage Grotesque";font-size:1.2rem;color:#fff}
+  footer p{font-size:.95rem;max-width:320px;line-height:1.7}
+  .foot-col h4{color:#fff;font-size:1rem;margin-bottom:16px}
+  .foot-col a{display:block;color:#c9cdec;padding:6px 0;font-size:.95rem;transition:.2s}
+  .foot-col a:hover{color:#fff}
+  .foot-social{display:flex;gap:12px;margin-top:18px}
+  .foot-social a{width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.08);display:grid;place-items:center;transition:.2s}
+  .foot-social a:hover{background:var(--periwinkle);transform:translateY(-3px)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.85rem;color:#8f95c0}
+
+  /* ---------- GOOGLE RATE CTA ---------- */
+  .google-cta{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);
+    box-shadow:var(--shadow-md);padding:44px;display:grid;grid-template-columns:auto 1fr auto;
+    gap:32px;align-items:center;position:relative;overflow:hidden;
+  }
+  .google-cta .gmark{width:78px;height:78px;border-radius:20px;background:var(--paper);display:grid;place-items:center;flex:none;box-shadow:var(--shadow-sm)}
+  .google-cta .gmark svg{width:44px;height:44px}
+  .google-cta .gc-body h3{font-size:1.6rem;margin-bottom:6px}
+  .google-cta .gc-body p{color:var(--ink-soft);font-size:1rem}
+  .google-cta .gc-body .gstars{color:#fbbc05;letter-spacing:2px;font-size:1.15rem;margin-top:8px}
+  .google-cta .gc-body .gstars b{color:var(--ink);font-family:"Bricolage Grotesque";margin-right:6px}
+  .btn-google{
+    background:#fff;color:#3c4043;border:1.5px solid var(--line);box-shadow:var(--shadow-sm);
+    font-weight:700;white-space:nowrap;
+  }
+  .btn-google:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:#4285f4}
+  .btn-google svg{width:20px;height:20px}
+
+  /* ---------- QUICK AGENDA (tabs) ---------- */
+  .book-tabs{display:flex;gap:6px;background:var(--paper);border-radius:100px;padding:5px;margin-bottom:24px}
+  .book-tabs button{
+    flex:1;border:none;background:transparent;cursor:pointer;font-family:inherit;font-weight:700;
+    font-size:.92rem;padding:11px;border-radius:100px;color:var(--muted);transition:.25s;
+  }
+  .book-tabs button.on{background:var(--periwinkle);color:#fff;box-shadow:var(--shadow-sm)}
+  .quick-pane{display:none}
+  .quick-pane.on{display:block;animation:fade .4s ease}
+  .wizard-pane.hide{display:none}
+  .q-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .q-grid .field.full{grid-column:1 / -1}
+  .field select{
+    width:100%;border:1.5px solid var(--line);border-radius:12px;padding:13px 15px;font-family:inherit;
+    font-size:1rem;background:var(--paper);transition:.2s;-webkit-appearance:none;appearance:none;cursor:pointer;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23787da3' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:right 15px center;
+  }
+  .field select:focus{outline:none;border-color:var(--periwinkle);background-color:#fff}
+
+  /* floating whatsapp */
+  .wa-float{
+    position:fixed;bottom:24px;right:24px;z-index:90;width:60px;height:60px;border-radius:50%;
+    background:#25D366;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.6);
+    transition:transform .3s;
+  }
+  .wa-float:hover{transform:scale(1.08)}
+
+  /* reveal base (JS-safe fallback: visible if no JS) */
+  .reveal{opacity:0;transform:translateY(28px)}
+  .no-anim .reveal{opacity:1;transform:none}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:960px){
+    .hero-inner,.doc-inner,.agenda-inner,.loc-inner,.foot-top{grid-template-columns:1fr}
+    .hero-visual{order:-1;max-width:460px;margin:0 auto}
+    .grid-4{grid-template-columns:repeat(2,1fr)}
+    .grid-3,.grid-rev{grid-template-columns:1fr 1fr}
+    .nav-links{display:none}
+    .burger{display:block}
+    .section-pad{padding:70px 0}
+    .google-cta{grid-template-columns:1fr;text-align:center;padding:36px 28px;gap:20px}
+    .google-cta .gmark{margin:0 auto}
+    .google-cta .gc-body .gstars{justify-content:center}
+  }
+  @media(max-width:640px){
+    .grid-3,.grid-rev,.grid-4,.opts,.q-grid{grid-template-columns:1fr}
+    .rev-top{flex-direction:column;align-items:flex-start}
+    .booker{padding:24px 20px}
+    .hero{padding:40px 0 60px}
+    .slots{grid-template-columns:repeat(2,1fr)}
+    .foot-bottom{flex-direction:column}
+    .wa-float{width:54px;height:54px;bottom:18px;right:18px}
+    .google-cta .btn-google{width:100%}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1!important;transform:none!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">
+      <span class="mark">
+        <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg"><path d="M8 12 Q50 78 92 12" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round"/></svg>
+      </span>
+      <span>Dental Hertz<small>Coyoacán · CDMX</small></span>
+    </a>
+    <nav class="nav-links">
+      <a class="link" href="#servicios">Servicios</a>
+      <a class="link" href="#doctora">La doctora</a>
+      <a class="link" href="#opiniones">Opiniones</a>
+      <a class="link" href="#ubicacion">Ubicación</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#agenda" class="btn btn-primary">Agendar cita</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-blob b1"></div>
+  <div class="hero-blob b2"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow" id="hero-eyebrow">Odontología con trato humano</span>
+      <h1>
+        Tu sonrisa en
+        <span class="accent">buenas manos
+          <svg class="smile-underline" viewBox="0 0 300 26" preserveAspectRatio="none"><path id="heroSmile" d="M6 8 Q150 34 294 8"/></svg>
+        </span>
+      </h1>
+      <p class="lead">En Consultorio Dental Hertz cuidamos tu salud bucal con atención profesional, ética y personalizada, en un ambiente cómodo y seguro. Explicaciones claras, cero prisas y un plan pensado para ti.</p>
+      <div class="hero-actions">
+        <a href="#agenda" class="btn btn-primary">Agendar mi cita
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#servicios" class="btn btn-ghost">Ver servicios</a>
+      </div>
+      <div class="trust">
+        <div class="stars-badge">
+          <span class="stars">★★★★★</span>
+          <div><b>5.0</b> <span class="gsub">· 18 opiniones en Google</span></div>
+        </div>
+        <div class="gsub">Atención con previa cita</div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="float-chip chip-1">
+        <span class="chip-ico">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Higiene certificada
+      </div>
+      <div class="hero-photo">
+        <img id="heroImg" alt="Consultorio Dental Hertz"
+             src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1000' viewBox='0 0 800 1000'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235169d3'/%3E%3Cstop offset='1' stop-color='%233a4cb2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='1000' fill='url(%23g)'/%3E%3Cpath d='M250 360 Q400 640 550 360' fill='none' stroke='%23ffffff' stroke-width='34' stroke-linecap='round' opacity='.85'/%3E%3Ctext x='400' y='770' font-family='Arial,sans-serif' font-size='34' font-weight='700' fill='%23ffffff' text-anchor='middle' opacity='.95'%3EConsultorio Dental Hertz%3C/text%3E%3Ctext x='400' y='815' font-family='Arial,sans-serif' font-size='22' fill='%23dfe4fb' text-anchor='middle'%3EColoca aquí tu foto%3C/text%3E%3C/svg%3E">
+        <div class="photo-caption">
+          <span class="kicker">Consultorio Dental Hertz</span>
+          <h3>Cuidado integral de tu salud bucal</h3>
+        </div>
+      </div>
+      <div class="float-chip chip-2">
+        <span class="chip-ico" style="background:var(--periwinkle-tint);color:var(--periwinkle)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 8v4l3 2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9"/></svg>
+        </span>
+        Respuesta rápida
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="servicios" class="section-pad">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Lo que hacemos</span>
+      <h2>Servicios pensados para cada etapa de tu sonrisa</h2>
+      <p>Desde la revisión preventiva hasta tratamientos especializados, siempre con explicaciones claras y planes a tu medida.</p>
+    </div>
+    <div class="grid-3">
+      <article class="svc reveal">
+        <div class="ico">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5.5c-2-2.5-6-2-7 1-1 3 1 8 3 11 .8 1.2 2 1.2 2.5-.5.4-1.4 1.6-1.4 2 0 .5 1.7 1.7 1.7 2.5.5 2-3 3-8 3-11-1-3-5-3.5-6-1Z" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Odontología general</h3>
+        <p>Diagnóstico, limpiezas, resinas y el cuidado del día a día para mantener tu boca sana.</p>
+        <ul><li>Revisión y diagnóstico</li><li>Limpieza dental</li><li>Resinas y restauraciones</li></ul>
+      </article>
+      <article class="svc reveal">
+        <div class="ico">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6l7-3Z" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Odontología preventiva</h3>
+        <p>Nos adelantamos a los problemas: hábitos, controles y protección para que sonrías tranquilo.</p>
+        <ul><li>Aplicación de flúor</li><li>Selladores</li><li>Control y seguimiento</li></ul>
+      </article>
+      <article class="svc reveal">
+        <div class="ico">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Odontología especializada</h3>
+        <p>Tratamientos más avanzados con protocolos estrictos de higiene y esterilización.</p>
+        <ul><li>Planes personalizados</li><li>Protocolos de seguridad</li><li>Seguimiento cercano</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<svg class="smile-divider reveal" viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M40 20 Q600 90 1160 20"/></svg>
+
+<!-- DOCTOR -->
+<section id="doctora" class="doctor section-pad">
+  <div class="wrap doc-inner">
+    <div class="doc-photo reveal">
+      <span class="avatar">RH</span>
+      <svg class="big-smile" viewBox="0 0 100 60"><path d="M10 14 Q50 74 90 14"/></svg>
+    </div>
+    <div class="doc-body reveal">
+      <span class="eyebrow">Al frente del consultorio</span>
+      <h2>Dra. Rosa Marianita Herrera Téllez</h2>
+      <div class="doc-role">Cirujana Dentista · Odontóloga</div>
+      <p>Cada paciente que entra al consultorio recibe algo antes que un tratamiento: tiempo para ser escuchado. La Dra. Herrera cree que la mejor odontología empieza por explicar, sin tecnicismos, qué está pasando y cuáles son tus opciones.</p>
+      <p>Su forma de trabajar combina ética, calidez humana y planes de tratamiento realistas, adaptados a lo que tú necesitas y puedes.</p>
+      <div class="doc-values">
+        <span class="val"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Trato cálido y humano</span>
+        <span class="val"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Explicaciones claras</span>
+        <span class="val"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Atención personalizada</span>
+      </div>
+      <a href="https://eldoctor.com.mx/doctor/rosa-marianita-herrera-tellez-dentista-odontologo" target="_blank" rel="noopener" class="btn btn-ghost">Ver perfil profesional
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why section-pad">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Por qué Dental Hertz</span>
+      <h2>Un consultorio donde te sientes en confianza</h2>
+    </div>
+    <div class="grid-4">
+      <div class="feat reveal">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.3-9.3-8.5C1 9 3 5 6.5 5c2 0 3 1 3.5 2 .5-1 1.5-2 3.5-2C17 5 19 9 17.3 12.5 15 16.7 12 21 12 21Z" stroke-linejoin="round"/></svg></div>
+        <h3>Trato humano</h3>
+        <p>Amable, cálido y sin prisas. Aquí eres una persona, no un expediente.</p>
+      </div>
+      <div class="feat reveal">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6l7-3Z" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Ética profesional</h3>
+        <p>Te decimos solo lo que necesitas. Honestidad en cada recomendación.</p>
+      </div>
+      <div class="feat reveal">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v4M16 3v4M5 9h14M4 21h16a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v13a1 1 0 0 0 1 1Z" stroke-linejoin="round"/></svg></div>
+        <h3>Planes a tu medida</h3>
+        <p>Tratamientos adaptados a tus necesidades, tiempos y posibilidades.</p>
+      </div>
+      <div class="feat reveal">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 0 0-4 4v5a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4Z" stroke-linejoin="round"/><path d="M6 21h12M9 21v-3M15 21v-3" stroke-linecap="round"/></svg></div>
+        <h3>Higiene estricta</h3>
+        <p>Protocolos de esterilización rigurosos para la seguridad de todos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="opiniones" class="section-pad">
+  <div class="wrap">
+    <div class="rev-top">
+      <div class="sec-head reveal" style="margin-bottom:0">
+        <span class="eyebrow">Lo que dicen los pacientes</span>
+        <h2>Sonrisas que hablan por nosotros</h2>
+      </div>
+      <div class="google-score reveal">
+        <div class="num">5.0</div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="g">18 opiniones · Google</div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-rev">
+      <div class="review reveal">
+        <div class="quote">"</div>
+        <p>Excelente servicio, profesionalidad y amabilidad.</p>
+        <div class="who"><span class="a">P</span><div><b>Paciente verificado</b><small>Opinión en Google</small></div></div>
+      </div>
+      <div class="review reveal">
+        <div class="quote">"</div>
+        <p>Muy buena atención, con ética y humanidad.</p>
+        <div class="who"><span class="a">P</span><div><b>Paciente verificado</b><small>Opinión en Google</small></div></div>
+      </div>
+      <div class="review reveal">
+        <div class="quote">"</div>
+        <p>Nos volveremos a ver pronto. Volvería sin dudarlo.</p>
+        <div class="who"><span class="a">P</span><div><b>Paciente verificado</b><small>Opinión en Google</small></div></div>
+      </div>
+    </div>
+
+    <!-- CALIFÍCANOS EN GOOGLE -->
+    <div class="google-cta reveal" style="margin-top:40px">
+      <div class="gmark">
+        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-label="Google">
+          <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+          <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+          <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34A21.98 21.98 0 0 0 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
+          <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+        </svg>
+      </div>
+      <div class="gc-body">
+        <h3>¿Te atendimos bien? Cuéntale a Google</h3>
+        <p>Tu opinión ayuda a más personas a encontrar atención dental de confianza. Nos tomará solo un minuto.</p>
+        <div class="gstars"><b>5.0</b>★★★★★ <span style="color:var(--muted);font-size:.85rem;font-weight:600">· 18 opiniones</span></div>
+      </div>
+      <a class="btn btn-google" target="_blank" rel="noopener"
+         href="https://www.google.com/search?q=consultorio+dental+hertz#lrd=0x85d1ff1764e44b1f:0x442d1582c962dead,3">
+        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+          <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+          <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34A21.98 21.98 0 0 0 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
+          <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+        </svg>
+        Califícanos en Google
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDA / BOOKING -->
+<section id="agenda" class="agenda section-pad">
+  <svg class="bg-smile" viewBox="0 0 100 60"><path d="M8 12 Q50 78 92 12"/></svg>
+  <div class="wrap agenda-inner">
+    <div class="agenda-side reveal">
+      <span class="eyebrow">Agenda en línea</span>
+      <h2>Reserva tu cita en menos de un minuto</h2>
+      <p class="lead">Elige entre el asistente paso a paso o la agenda rápida. En ambos confirmamos tu cita directo por WhatsApp — sin llamadas.</p>
+      <div class="contact-line">
+        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div>55 1186 7016<small>Llámanos o escríbenos</small></div>
+      </div>
+      <div class="contact-line">
+        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z" stroke-linejoin="round"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <div>Plaza Taxqueña, Coyoacán<small>Av. Paseo de los Jardines 222, Loc 14</small></div>
+      </div>
+      <div class="contact-line">
+        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div>Lun a Vie 9:00–18:00 · Sáb 9:00–14:00<small>Atención con previa cita</small></div>
+      </div>
+    </div>
+
+    <div class="booker reveal" id="booker">
+      <div class="book-tabs">
+        <button class="on" data-tab="wizard">Paso a paso</button>
+        <button data-tab="quick">Agenda rápida</button>
+      </div>
+
+      <!-- ===== WIZARD (paso a paso) ===== -->
+      <div class="wizard-pane" id="wizardPane">
+      <div class="steps-bar">
+        <div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      </div>
+
+      <!-- Step 1: service -->
+      <div class="step on" data-step="1">
+        <div class="step-label">Paso 1 de 4</div>
+        <h3>¿Qué necesitas?</h3>
+        <div class="opts" id="svcOpts">
+          <button class="opt" data-val="Odontología general">Odontología general<small>Revisión, limpieza, resinas</small></button>
+          <button class="opt" data-val="Odontología preventiva">Odontología preventiva<small>Flúor, selladores, control</small></button>
+          <button class="opt" data-val="Tratamiento especializado">Tratamiento especializado<small>Casos que requieren más</small></button>
+          <button class="opt" data-val="Primera consulta / valoración">Primera consulta<small>No sé por dónde empezar</small></button>
+        </div>
+        <div class="nav-btns">
+          <button class="btn btn-primary" id="next1" disabled>Continuar</button>
+        </div>
+      </div>
+
+      <!-- Step 2: date -->
+      <div class="step" data-step="2">
+        <div class="step-label">Paso 2 de 4</div>
+        <h3>Elige el día</h3>
+        <div class="cal-head">
+          <b id="calMonth">Mes</b>
+          <div class="cal-nav">
+            <button id="calPrev" aria-label="Mes anterior">‹</button>
+            <button id="calNext" aria-label="Mes siguiente">›</button>
+          </div>
+        </div>
+        <div class="cal-grid" id="calGrid"></div>
+        <p class="hint">Domingos cerrado · Atendemos con previa cita</p>
+        <div class="nav-btns">
+          <button class="btn btn-back" data-back>Atrás</button>
+          <button class="btn btn-primary" id="next2" disabled>Continuar</button>
+        </div>
+      </div>
+
+      <!-- Step 3: time -->
+      <div class="step" data-step="3">
+        <div class="step-label">Paso 3 de 4</div>
+        <h3>Elige la hora</h3>
+        <div class="slots" id="slots"></div>
+        <div class="nav-btns">
+          <button class="btn btn-back" data-back>Atrás</button>
+          <button class="btn btn-primary" id="next3" disabled>Continuar</button>
+        </div>
+      </div>
+
+      <!-- Step 4: data + confirm -->
+      <div class="step" data-step="4">
+        <div class="step-label">Paso 4 de 4</div>
+        <h3>Tus datos</h3>
+        <div class="field">
+          <label for="fname">Nombre completo</label>
+          <input type="text" id="fname" placeholder="Ej. Ana López" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="fphone">Teléfono / WhatsApp</label>
+          <input type="tel" id="fphone" placeholder="Ej. 55 1234 5678" autocomplete="tel">
+        </div>
+        <div class="field">
+          <label for="fnote">Nota (opcional)</label>
+          <textarea id="fnote" rows="2" placeholder="Cuéntanos brevemente cómo te sientes o qué te preocupa"></textarea>
+        </div>
+        <div class="summary" id="summary"></div>
+        <div class="nav-btns">
+          <button class="btn btn-back" data-back>Atrás</button>
+          <button class="btn btn-wa" id="confirmBtn" disabled>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6a9.7 9.7 0 0 1-3.7-3.3c-.3-.4-.8-1.2-.8-2.3s.6-1.6.8-1.8a.8.8 0 0 1 .6-.3h.5c.2 0 .4 0 .6.4l.7 1.6c0 .2.1.3 0 .5l-.3.4-.3.3c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2 .9.8 1.6 1 1.9 1.2.2.1.4 0 .5-.1l.7-.8c.2-.3.4-.2.6-.1l1.6.7c.3.2.5.2.5.4.1.1.1.6-.1 1Z"/></svg>
+          Confirmar por WhatsApp</button>
+        </div>
+        <p class="hint">Se abrirá WhatsApp con tu solicitud lista para enviar.</p>
+      </div>
+
+      <!-- Confirmation -->
+      <div class="step" data-step="5">
+        <div class="confirm-view">
+          <svg class="check" viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="none" stroke="#25c3a0" stroke-width="6"/><path id="checkPath" d="M30 52 L45 66 L72 36" fill="none" stroke="#25c3a0" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>¡Casi listo!</h3>
+          <p>Te llevamos a WhatsApp para enviar tu solicitud. En cuanto la recibamos, confirmamos tu cita.</p>
+          <a href="#" class="btn btn-wa" id="reopenWa" target="_blank" rel="noopener">Abrir WhatsApp de nuevo</a>
+          <div style="margin-top:14px"><button class="btn btn-back" id="restart" style="width:100%">Agendar otra cita</button></div>
+        </div>
+      </div>
+      </div><!-- /wizard-pane -->
+
+      <!-- ===== QUICK (agenda rápida) ===== -->
+      <div class="quick-pane" id="quickPane">
+        <div class="step-label">Agenda rápida</div>
+        <h3 style="font-size:1.5rem;margin-bottom:20px">Todos tus datos en un paso</h3>
+        <div class="q-grid">
+          <div class="field full">
+            <label for="qname">Nombre completo</label>
+            <input type="text" id="qname" placeholder="Ej. Ana López" autocomplete="name">
+          </div>
+          <div class="field full">
+            <label for="qservice">Servicio</label>
+            <select id="qservice">
+              <option value="" disabled selected>Elige un servicio</option>
+              <option>Odontología general</option>
+              <option>Odontología preventiva</option>
+              <option>Tratamiento especializado</option>
+              <option>Primera consulta / valoración</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="qphone">Teléfono / WhatsApp</label>
+            <input type="tel" id="qphone" placeholder="Ej. 55 1234 5678" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="qday">Día de la semana</label>
+            <select id="qday">
+              <option value="" disabled selected>Elige un día</option>
+              <option>Lunes</option><option>Martes</option><option>Miércoles</option>
+              <option>Jueves</option><option>Viernes</option><option>Sábado</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="qtime">Hora</label>
+            <select id="qtime">
+              <option value="" disabled selected>Elige la hora</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-wa" id="qConfirm" style="width:100%;margin-top:8px" disabled>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6a9.7 9.7 0 0 1-3.7-3.3c-.3-.4-.8-1.2-.8-2.3s.6-1.6.8-1.8a.8.8 0 0 1 .6-.3h.5c.2 0 .4 0 .6.4l.7 1.6c0 .2.1.3 0 .5l-.3.4-.3.3c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2 .9.8 1.6 1 1.9 1.2.2.1.4 0 .5-.1l.7-.8c.2-.3.4-.2.6-.1l1.6.7c.3.2.5.2.5.4.1.1.1.6-.1 1Z"/></svg>
+        Enviar por WhatsApp</button>
+        <p class="hint">Se abrirá WhatsApp con tu solicitud lista para enviar al consultorio.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="ubicacion" class="section-pad">
+  <div class="wrap">
+    <div class="loc-inner">
+      <div class="reveal">
+        <span class="eyebrow">Cómo llegar</span>
+        <h2 style="font-size:clamp(1.9rem,3.6vw,2.7rem);margin:16px 0 8px">Estamos en Plaza Taxqueña</h2>
+        <p style="color:var(--ink-soft);font-size:1.05rem">Fácil de encontrar dentro de la plaza, en Coyoacán. Ven con previa cita y llega con tiempo para estacionarte.</p>
+        <div class="info-list">
+          <div class="info-item">
+            <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z" stroke-linejoin="round"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><b>Dirección</b><span>Av. Paseo de los Jardines 222, Loc 14, Paseos de Taxqueña, Coyoacán, 04250 CDMX</span></div>
+          </div>
+          <div class="info-item">
+            <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div><b>Teléfono</b><span>55 1186 7016</span></div>
+          </div>
+          <div class="info-item">
+            <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div style="flex:1"><b>Horario</b>
+              <div class="hours-tbl">
+                <div class="hr"><span>Lunes a Viernes</span><b>9:00 – 18:00</b></div>
+                <div class="hr"><span>Sábado</span><b>9:00 – 14:00</b></div>
+                <div class="hr closed"><span>Domingo</span><b>Cerrado</b></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Consultorio+Dental+Hertz+Coyoac%C3%A1n" target="_blank" rel="noopener" class="btn btn-primary">Ver en Google Maps
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M8 7h9v9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="loc-map reveal">
+        <iframe title="Mapa Consultorio Dental Hertz" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Av.%20Paseo%20de%20los%20Jardines%20222%2C%20Paseos%20de%20Taxque%C3%B1a%2C%20Coyoac%C3%A1n%2C%2004250%20CDMX&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">
+          <span class="mark"><svg viewBox="0 0 100 60"><path d="M8 12 Q50 78 92 12" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round"/></svg></span>
+          <b>Consultorio Dental Hertz</b>
+        </div>
+        <p>Odontología general, preventiva y especializada con trato humano, ético y cálido. Tu sonrisa en buenas manos, en Coyoacán, CDMX.</p>
+        <div class="foot-social">
+          <a href="https://www.instagram.com/dental.mar.hertz/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/></svg>
+          </a>
+          <a href="https://wa.me/525511867016" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6a9.7 9.7 0 0 1-3.7-3.3c-.3-.4-.8-1.2-.8-2.3s.6-1.6.8-1.8a.8.8 0 0 1 .6-.3h.5c.2 0 .4 0 .6.4l.7 1.6c0 .2.1.3 0 .5l-.3.4-.3.3c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2 .9.8 1.6 1 1.9 1.2.2.1.4 0 .5-.1l.7-.8c.2-.3.4-.2.6-.1l1.6.7c.3.2.5.2.5.4.1.1.1.6-.1 1Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Navegación</h4>
+        <a href="#servicios">Servicios</a>
+        <a href="#doctora">La doctora</a>
+        <a href="#opiniones">Opiniones</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#agenda">Agendar cita</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contacto</h4>
+        <a href="tel:+525511867016">55 1186 7016</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Consultorio+Dental+Hertz+Coyoac%C3%A1n" target="_blank" rel="noopener">Plaza Taxqueña, Coyoacán</a>
+        <a href="https://www.instagram.com/dental.mar.hertz/" target="_blank" rel="noopener">@dental.mar.hertz</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 Consultorio Dental Hertz. Todos los derechos reservados.</span>
+      <span>Atención con previa cita · Coyoacán, Ciudad de México</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/525511867016?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20Dental%20Hertz" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6a9.7 9.7 0 0 1-3.7-3.3c-.3-.4-.8-1.2-.8-2.3s.6-1.6.8-1.8a.8.8 0 0 1 .6-.3h.5c.2 0 .4 0 .6.4l.7 1.6c0 .2.1.3 0 .5l-.3.4-.3.3c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2 .9.8 1.6 1 1.9 1.2.2.1.4 0 .5-.1l.7-.8c.2-.3.4-.2.6-.1l1.6.7c.3.2.5.2.5.4.1.1.1.6-.1 1Z"/></svg>
+</a>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const hasGSAP = typeof gsap !== "undefined";
+
+  /* ---------- NAV scroll state + burger ---------- */
+  const nav = document.getElementById("nav");
+  window.addEventListener("scroll", () => {
+    nav.classList.toggle("scrolled", window.scrollY > 20);
+  });
+  const burger = document.getElementById("burger");
+  const links = document.querySelector(".nav-links");
+  burger.addEventListener("click", () => {
+    const open = links.style.display === "flex";
+    if(open){ links.style.display = ""; }
+    else {
+      links.style.cssText = "display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;background:#fff;padding:20px 24px;box-shadow:var(--shadow-md);gap:14px;border-bottom:1px solid var(--line)";
+    }
+  });
+  links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => { if(window.innerWidth <= 960) links.style.display = ""; }));
+
+  /* ---------- Animations ---------- */
+  if(hasGSAP && !reduce){
+    gsap.registerPlugin(ScrollTrigger);
+
+    // hero smile underline draw
+    const smile = document.getElementById("heroSmile");
+    if(smile){
+      const len = smile.getTotalLength();
+      gsap.set(smile, {strokeDasharray: len, strokeDashoffset: len});
+    }
+
+    // load-in sequence
+    const tl = gsap.timeline({defaults:{ease:"power3.out"}});
+    tl.from("#hero-eyebrow",{y:20,opacity:0,duration:.6})
+      .from(".hero h1",{y:30,opacity:0,duration:.8},"-=.3")
+      .to("#heroSmile",{strokeDashoffset:0,duration:1,ease:"power2.inOut"},"-=.4")
+      .from(".hero p.lead",{y:24,opacity:0,duration:.6},"-=.7")
+      .from(".hero-actions .btn",{y:20,opacity:0,duration:.5,stagger:.1},"-=.4")
+      .from(".trust > *",{y:20,opacity:0,duration:.5,stagger:.1},"-=.3")
+      .from(".hero-photo",{y:40,opacity:0,scale:.96,duration:.9,ease:"power3.out"},"-=1")
+      .from(".photo-caption",{y:20,opacity:0,duration:.6},"-=.4")
+      .from(".float-chip",{scale:.6,opacity:0,duration:.6,stagger:.15,ease:"back.out(1.7)"},"-=.5");
+
+    // floating chips ambient
+    gsap.to(".chip-1",{y:-8,duration:2.4,repeat:-1,yoyo:true,ease:"sine.inOut"});
+    gsap.to(".chip-2",{y:10,duration:2.8,repeat:-1,yoyo:true,ease:"sine.inOut"});
+    gsap.to(".b1",{x:30,y:20,duration:9,repeat:-1,yoyo:true,ease:"sine.inOut"});
+    gsap.to(".b2",{x:-24,y:-16,duration:11,repeat:-1,yoyo:true,ease:"sine.inOut"});
+
+    // scroll reveals
+    gsap.utils.toArray(".reveal").forEach(el => {
+      gsap.to(el,{
+        opacity:1, y:0, duration:.8, ease:"power3.out",
+        scrollTrigger:{trigger:el, start:"top 86%"}
+      });
+    });
+
+    // smile divider draw on scroll
+    document.querySelectorAll(".smile-divider path").forEach(p => {
+      const l = p.getTotalLength();
+      gsap.set(p,{strokeDasharray:l, strokeDashoffset:l});
+      gsap.to(p,{strokeDashoffset:0, duration:1.2, ease:"power2.inOut",
+        scrollTrigger:{trigger:p, start:"top 85%"}});
+    });
+  } else {
+    // no animation: make everything visible
+    document.body.classList.add("no-anim");
+    document.querySelectorAll(".reveal").forEach(el => { el.style.opacity=1; el.style.transform="none"; });
+    const s = document.getElementById("heroSmile"); if(s) s.style.strokeDasharray="none";
+  }
+
+  /* =========================================================
+     AGENDA — booking flow
+  ========================================================= */
+  const booking = { service:"", date:null, time:"", name:"", phone:"", note:"" };
+  const WA_NUMBER = "525511867016";
+  const MONTHS = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+  const DOW = ["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"];
+
+  const steps = document.querySelectorAll("#booker .step");
+  const dots = document.querySelectorAll(".steps-bar .dot");
+  let current = 1;
+
+  function goStep(n){
+    current = n;
+    steps.forEach(s => s.classList.toggle("on", +s.dataset.step === n));
+    dots.forEach((d,i) => d.classList.toggle("active", i < Math.min(n,4)));
+    const booker = document.getElementById("booker");
+    if(booker && n>1) booker.scrollIntoView({behavior:"smooth", block:"nearest"});
+  }
+  document.querySelectorAll("[data-back]").forEach(b => b.addEventListener("click", () => goStep(current-1)));
+
+  /* Step 1 — service */
+  const svcOpts = document.querySelectorAll("#svcOpts .opt");
+  svcOpts.forEach(o => o.addEventListener("click", () => {
+    svcOpts.forEach(x => x.classList.remove("sel"));
+    o.classList.add("sel");
+    booking.service = o.dataset.val;
+    document.getElementById("next1").disabled = false;
+  }));
+  document.getElementById("next1").addEventListener("click", () => { buildCalendar(); goStep(2); });
+
+  /* Step 2 — calendar */
+  let viewDate = new Date(); viewDate.setDate(1);
+  const today = new Date(); today.setHours(0,0,0,0);
+  const calGrid = document.getElementById("calGrid");
+  const calMonth = document.getElementById("calMonth");
+  const calPrev = document.getElementById("calPrev");
+  const calNext = document.getElementById("calNext");
+
+  function sameMonth(a,b){ return a.getFullYear()===b.getFullYear() && a.getMonth()===b.getMonth(); }
+
+  function buildCalendar(){
+    calGrid.innerHTML = "";
+    ["D","L","M","M","J","V","S"].forEach(d => {
+      const h = document.createElement("div"); h.className="dow"; h.textContent=d; calGrid.appendChild(h);
+    });
+    calMonth.textContent = MONTHS[viewDate.getMonth()] + " " + viewDate.getFullYear();
+    const firstDow = viewDate.getDay();
+    const daysInMonth = new Date(viewDate.getFullYear(), viewDate.getMonth()+1, 0).getDate();
+    for(let i=0;i<firstDow;i++){ const e=document.createElement("div"); e.className="day empty"; calGrid.appendChild(e); }
+    for(let d=1; d<=daysInMonth; d++){
+      const dateObj = new Date(viewDate.getFullYear(), viewDate.getMonth(), d);
+      const btn = document.createElement("button");
+      btn.className="day"; btn.textContent=d; btn.type="button";
+      const isPast = dateObj < today;
+      const isSunday = dateObj.getDay() === 0;
+      if(isPast || isSunday){ btn.disabled = true; }
+      else {
+        btn.addEventListener("click", () => {
+          calGrid.querySelectorAll(".day").forEach(x => x.classList.remove("sel"));
+          btn.classList.add("sel");
+          booking.date = dateObj;
+          document.getElementById("next2").disabled = false;
+        });
+      }
+      if(booking.date && dateObj.toDateString() === booking.date.toDateString()) btn.classList.add("sel");
+      calGrid.appendChild(btn);
+    }
+    // limit navigation: no going before current month
+    calPrev.disabled = sameMonth(viewDate, today);
+  }
+  calPrev.addEventListener("click", () => { if(!sameMonth(viewDate,today)){ viewDate.setMonth(viewDate.getMonth()-1); buildCalendar(); }});
+  calNext.addEventListener("click", () => { viewDate.setMonth(viewDate.getMonth()+1); buildCalendar(); });
+
+  document.getElementById("next2").addEventListener("click", () => { buildSlots(); goStep(3); });
+
+  /* Step 3 — time slots (Sat shorter) */
+  const slotsEl = document.getElementById("slots");
+  function buildSlots(){
+    slotsEl.innerHTML = "";
+    const isSat = booking.date && booking.date.getDay() === 6;
+    const start = 9;
+    const end = isSat ? 14 : 18;
+    const times = [];
+    for(let h=start; h<end; h++){ times.push(h+":00"); times.push(h+":30"); }
+    times.forEach(t => {
+      const b = document.createElement("button");
+      b.className="slot"; b.type="button"; b.textContent = t;
+      b.addEventListener("click", () => {
+        slotsEl.querySelectorAll(".slot").forEach(x => x.classList.remove("sel"));
+        b.classList.add("sel");
+        booking.time = t;
+        document.getElementById("next3").disabled = false;
+      });
+      slotsEl.appendChild(b);
+    });
+    document.getElementById("next3").disabled = true;
+    booking.time = "";
+  }
+  document.getElementById("next3").addEventListener("click", () => { renderSummary(); goStep(4); });
+
+  /* Step 4 — data + summary */
+  const fname = document.getElementById("fname");
+  const fphone = document.getElementById("fphone");
+  const fnote = document.getElementById("fnote");
+  const confirmBtn = document.getElementById("confirmBtn");
+
+  function fmtDate(d){
+    return DOW[d.getDay()] + " " + d.getDate() + " de " + MONTHS[d.getMonth()];
+  }
+  function renderSummary(){
+    document.getElementById("summary").innerHTML = `
+      <div class="row"><span>Servicio</span><b>${booking.service}</b></div>
+      <div class="row"><span>Fecha</span><b>${fmtDate(booking.date)}</b></div>
+      <div class="row"><span>Hora</span><b>${booking.time} h</b></div>`;
+    validate();
+  }
+  function validate(){
+    booking.name = fname.value.trim();
+    booking.phone = fphone.value.trim();
+    booking.note = fnote.value.trim();
+    confirmBtn.disabled = !(booking.name.length > 1 && booking.phone.length >= 8);
+  }
+  [fname,fphone].forEach(i => i.addEventListener("input", validate));
+
+  function buildWaLink(){
+    const msg =
+`¡Hola Dental Hertz! Quiero agendar una cita:
+
+• Servicio: ${booking.service}
+• Fecha: ${fmtDate(booking.date)}
+• Hora: ${booking.time} h
+• Nombre: ${booking.name}
+• Teléfono: ${booking.phone}` +
+(booking.note ? `\n• Nota: ${booking.note}` : "") +
+`\n\nQuedo atento(a) a la confirmación. ¡Gracias!`;
+    return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+  }
+
+  confirmBtn.addEventListener("click", () => {
+    const url = buildWaLink();
+    document.getElementById("reopenWa").href = url;
+    window.open(url, "_blank");
+    goStep(5);
+    // draw the check
+    if(hasGSAP && !reduce){
+      const p = document.getElementById("checkPath");
+      const l = p.getTotalLength();
+      gsap.set(p,{strokeDasharray:l, strokeDashoffset:l});
+      gsap.to(p,{strokeDashoffset:0, duration:.6, delay:.15, ease:"power2.out"});
+    }
+  });
+
+  document.getElementById("restart").addEventListener("click", () => {
+    booking.service=""; booking.date=null; booking.time="";
+    svcOpts.forEach(x=>x.classList.remove("sel"));
+    document.getElementById("next1").disabled=true;
+    document.getElementById("next2").disabled=true;
+    fname.value=""; fphone.value=""; fnote.value="";
+    goStep(1);
+  });
+
+  /* =========================================================
+     TABS + AGENDA RÁPIDA
+  ========================================================= */
+  const tabBtns = document.querySelectorAll(".book-tabs button");
+  const wizardPane = document.getElementById("wizardPane");
+  const quickPane = document.getElementById("quickPane");
+  tabBtns.forEach(b => b.addEventListener("click", () => {
+    tabBtns.forEach(x => x.classList.remove("on"));
+    b.classList.add("on");
+    const quick = b.dataset.tab === "quick";
+    quickPane.classList.toggle("on", quick);
+    wizardPane.classList.toggle("hide", quick);
+  }));
+
+  // build quick time options (9:00–18:00, sábado se recorta si aplica)
+  const qname = document.getElementById("qname");
+  const qservice = document.getElementById("qservice");
+  const qphone = document.getElementById("qphone");
+  const qday = document.getElementById("qday");
+  const qtime = document.getElementById("qtime");
+  const qConfirm = document.getElementById("qConfirm");
+
+  function fillQuickTimes(){
+    const isSat = qday.value === "Sábado";
+    const end = isSat ? 14 : 18;
+    const prev = qtime.value;
+    qtime.innerHTML = '<option value="" disabled selected>Elige la hora</option>';
+    for(let h=9; h<end; h++){
+      ["00","30"].forEach(m => {
+        const t = h + ":" + m;
+        const o = document.createElement("option"); o.textContent = t; qtime.appendChild(o);
+      });
+    }
+    // keep previous selection if still valid
+    if(prev && [...qtime.options].some(o => o.value === prev)) qtime.value = prev;
+  }
+  fillQuickTimes();
+  qday.addEventListener("change", () => { fillQuickTimes(); qValidate(); });
+
+  function qValidate(){
+    const ok = qname.value.trim().length > 1 &&
+               qservice.value &&
+               qphone.value.trim().length >= 8 &&
+               qday.value &&
+               qtime.value;
+    qConfirm.disabled = !ok;
+  }
+  [qname,qservice,qphone,qday,qtime].forEach(el => {
+    el.addEventListener("input", qValidate);
+    el.addEventListener("change", qValidate);
+  });
+
+  qConfirm.addEventListener("click", () => {
+    const msg =
+`¡Hola Dental Hertz! Quiero agendar una cita:
+
+• Servicio: ${qservice.value}
+• Día: ${qday.value}
+• Hora: ${qtime.value} h
+• Nombre: ${qname.value.trim()}
+• Teléfono: ${qphone.value.trim()}
+
+Quedo atento(a) a la confirmación. ¡Gracias!`;
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank");
+  });
+})();
+</script>
+</body>
+</html>
